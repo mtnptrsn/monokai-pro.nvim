@@ -7,7 +7,7 @@ M.setup = function(c, config, hp)
   local float_winBackgroundClear = vim.tbl_contains(config.background_clear, "float_win")
   return {
     ColorColumn = {
-      bg = c.base.dimmed5
+      bg = c.base.dimmed5,
     }, -- used for the columns set with 'colorcolumn'
     Conceal = { bg = c.editor.background, fg = c.base.dimmed3 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor = {
@@ -38,17 +38,20 @@ M.setup = function(c, config, hp)
     },
     DiffAdd = {
       bg = c.diffEditor.insertedLineBackground,
-      fg = c.diffEditorOverview.insertedForeground,
+      -- fg = c.diffEditorOverview.insertedForeground,
     }, -- diff mode: Added line |diff.txt|
     DiffChange = {
       bg = c.diffEditor.modifiedLineBackground,
-      fg = c.diffEditorOverview.modifiedForeground,
+      -- fg = c.diffEditorOverview.modifiedForeground,
     }, -- diff mode: Changed line |diff.txt|
     DiffDelete = {
       bg = c.diffEditor.removedLineBackground,
-      fg = c.diffEditorOverview.removedForeground,
+      -- fg = c.diffEditorOverview.removedForeground,
     },
-    DiffText = { bg = c.editor.background, fg = c.editor.foreground }, -- diff mode: Changed text within a changed line |diff.txt|
+    DiffText = {
+      bg = c.editor.background,
+      -- fg = c.editor.foreground,
+    }, -- diff mode: Changed text within a changed line |diff.txt|
     EndOfBuffer = {
       fg = c.editor.background,
     }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
